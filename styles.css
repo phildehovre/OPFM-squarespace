@@ -1,0 +1,113 @@
+:root {
+    --clr-text-primary: #1F4EC4;
+    --clr-text-secondary: #7DA2FF;
+    --clr-bg-primary: #221C3F;
+    --font-primary: "Helvetica"
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100svw;
+    background-color: var(--clr-bg-primary);
+    color: var(--clr-text-primary);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.article {
+    display: flex;
+    height: 300px;
+    width: 100%;
+}
+
+.block {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    box-shadow: 1px 5px 10px 5px #0000000a;
+    width: 215px;
+    height: 290px;
+    padding: 20px;
+    position: relative;
+    background-color: white;
+    color: var(--clr-text-primary);
+    z-index: 99;
+}
+.card > p {
+    margin: 0;
+}
+
+img {
+    max-height: 100px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-right::before{
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: -19px;
+    border-radius: 4px;
+    background-color: white;
+    top: 50%;
+    z-index: 0;
+    transform: translateY(-50%) rotate(45deg);
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
+}
+
+.card-left::before {
+    content: '';
+    z-index: 0;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    right: 1px;
+    top: 50%;
+    background-color: white;
+    transform:  translateX(50%) translateY(-50%) rotate(45deg);
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+.header{
+    width: 100%;
+    display: flex
+}
+
+.header.right {
+    text-align: right;
+    justify-content: flex-end
+}
+
+.header.right {
+    text-align: left
+}
+
+.line {
+    border-right: 1px solid white;;
+    height: 100%;
+    position: relative;
+}
+
+.line::after {
+    content: '';
+    top: 33%;
+    transform: translateY(50%) translateX(-50%);
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    background-color: var(--clr-text-primary);
+
+}
